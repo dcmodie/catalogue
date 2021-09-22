@@ -1,0 +1,8 @@
+how to get new key for my github:
+
+add thunk 
+add async await
+add hook useState 
+
+hooks call first render
+hooks call every render 
