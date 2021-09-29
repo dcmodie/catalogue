@@ -8,9 +8,7 @@ const initialState = [
 const MovieSlice = (state = initialState, action)=>{
 	switch(action.type){
 		case 'addMovie':
-			console.log('add movie called')
-			return state.movies.push(action.payload)
-			break;
+			return [...state, action.payload];
 		case 'removeMovie':
 			console.log('remove movie called')
 			break;

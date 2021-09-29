@@ -1,11 +1,19 @@
 .addMoviesModal {
-	top: '65%';
-  left: '50%';
-  right: 'auto';
-  bottom: 'auto';
-  width: '80%';
-  transform: 'translate(-40%, -10%)';
-  background: blue;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background: #bbbbbb;
   position: absolute;
+  padding: 20px;
   
+}
+
+.addMoviesModal input{
+	float:right;
+	margin: 0px 0px 0px 10px;
+}
+
+.modalTitle {
+	width:35%;
+	margin: 0 auto;
 }
