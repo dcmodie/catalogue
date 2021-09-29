@@ -1,0 +1,11 @@
+.addMoviesModal {
+	top: '65%';
+  left: '50%';
+  right: 'auto';
+  bottom: 'auto';
+  width: '80%';
+  transform: 'translate(-40%, -10%)';
+  background: blue;
+  position: absolute;
+  
+}
