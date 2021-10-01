@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import MovieListItem from './MovieListItem'
 import {useSelector, useDispatch } from 'react-redux';
 import Modal from "react-modal";
 import './movies.css'
@@ -18,6 +17,7 @@ const Movies = (props)=>{
 	const [titleVal, setTitleVal] = useState('');
 	const [dirVal, setDirVal] = useState('');
 	const [yearVal, setYearVal] = useState('');
+	const [reviewVal, setReviewVal] = useState('');
 	const [addMovieModalOpen, setAddMovieModalOpen] = useState(false);
 
 	// const renderList = (movies) => {
@@ -37,15 +37,17 @@ const Movies = (props)=>{
 	const onYearChange  = (e)=>{
 		setYearVal(e.target.value)
 	}
+	const onReviewChange  = (e)=>{
+		setReviewVal(e.target.value)
+	}
 
 	const onSaveClicked =(e)=>{
 		//save data
-		dispatch( {type:"addMovie", payload:{title:titleVal, year:yearVal, director:dirVal} } )
+		dispatch( {type:"addMovie", payload:{title:titleVal, year:yearVal, director:dirVal, review:reviewVal} } )
 		setAddMovieModalOpen(false)
 		dispatch({ type: 'streetChanged', payload: e.target.value });
 
 	}
-
 
 	return (
 		<div>
@@ -58,6 +60,7 @@ const Movies = (props)=>{
 				<label >Title<input value={titleVal} onChange={onTitleChange} /></label>
 				<label >Director<input value={dirVal} onChange={onDirChange} /></label>
 				<label >Year<input value={yearVal} onChange={onYearChange} /></label>
+				<label >Review<textarea value={reviewVal} onChange={onReviewChange}/></label>
 				<button onClick={(e)=>{ setAddMovieModalOpen(false) }}>Cancel</button>
 				<button onClick={onSaveClicked}>Save</button>
 			</Modal>
@@ -69,6 +72,7 @@ const Movies = (props)=>{
 			        <TableCell>Title</TableCell>
 			        <TableCell align="right">Year</TableCell>
 			        <TableCell align="right">Director</TableCell>
+			        <TableCell align="right">Review</TableCell>
 			      </TableRow>
 			    </TableHead>
 			    <TableBody>
@@ -82,6 +86,7 @@ const Movies = (props)=>{
 			          </TableCell>
 			          <TableCell align="right">{row.year}</TableCell>
 			          <TableCell align="right">{row.director}</TableCell>
+			          <TableCell align="right">{row.review}</TableCell>
 			        </TableRow>
 			      ))}
 			    </TableBody>
@@ -92,35 +97,3 @@ const Movies = (props)=>{
 		</div>)
 }
 export default Movies
-
-//				<label >Review<input value={reviewVal} onChange={onInputChange} /></label>
-
-// import React, { useState } from "react";
-// import "./styles.css";
-
-// import Modal from "react-modal";
-
-// //Modal.setAppElement("#root");
-
-// export default function App() {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   function toggleModal() {
-//     setIsOpen(!isOpen);
-//   }
-
-//   return (
-//     <div className="App">
-//       <button onClick={toggleModal}>Open modal</button>
-
-//       <Modal
-//         isOpen={isOpen}
-//         onRequestClose={toggleModal}
-//         contentLabel="My dialog"
-//       >
-//         <div>My modal dialog.</div>
-//         <button onClick={toggleModal}>Close modal</button>
-//       </Modal>
-//     </div>
-//   );
-// }
