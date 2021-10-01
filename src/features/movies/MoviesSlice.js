@@ -14,8 +14,6 @@ const MovieSlice = (state = initialState, action)=>{
 			break;
 		default:
 			return state;
-
 	}
-
 }
 export default MovieSlice;

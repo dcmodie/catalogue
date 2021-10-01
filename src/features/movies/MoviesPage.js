@@ -10,7 +10,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
 const Movies = (props)=>{
 	const dispatch = useDispatch();
 	const movies = useSelector((state)=>state.movies);
@@ -19,14 +18,6 @@ const Movies = (props)=>{
 	const [yearVal, setYearVal] = useState('');
 	const [reviewVal, setReviewVal] = useState('');
 	const [addMovieModalOpen, setAddMovieModalOpen] = useState(false);
-
-	// const renderList = (movies) => {
-	// 	const retList = []
-	// 	movies.map( (movie)=>{
-	// 		retList.push(<MovieListItem movie={movie} />)
-	// 	})
-	// 	return retList;
-	// }
 
 	const onTitleChange  = (e)=>{
 		setTitleVal(e.target.value)
@@ -46,7 +37,6 @@ const Movies = (props)=>{
 		dispatch( {type:"addMovie", payload:{title:titleVal, year:yearVal, director:dirVal, review:reviewVal} } )
 		setAddMovieModalOpen(false)
 		dispatch({ type: 'streetChanged', payload: e.target.value });
-
 	}
 
 	return (
@@ -86,14 +76,13 @@ const Movies = (props)=>{
 			          </TableCell>
 			          <TableCell align="right">{row.year}</TableCell>
 			          <TableCell align="right">{row.director}</TableCell>
-			          <TableCell align="right">{row.review}</TableCell>
+			          <TableCell align="right" style={{'maxWidth':"100px"}}>{row.review}</TableCell>
 			        </TableRow>
 			      ))}
 			    </TableBody>
 			  </Table>
 			</TableContainer>
 			<button onClick={(e)=>{setAddMovieModalOpen(true)}}>Add Movie</button>
-
 		</div>)
 }
 export default Movies

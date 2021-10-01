@@ -2,15 +2,20 @@
   left:50%;
   top:50%;
   transform: translate(-50%, -50%);
-  background: #bbbbbb;
+  background: #eeeeee;
   position: absolute;
   padding: 20px;
+  border-radius: 25px;
+  border: 2px solid #cccccc;
   
 }
 
 .addMoviesModal input{
 	float:right;
 	margin: 0px 0px 0px 10px;
+}
+.addMoviesModal textarea{
+	height:200px;
 }
 
 .modalTitle {
