@@ -1,8 +1,8 @@
 import React from 'react';
 
 const initialState = [
-		{title:"Jaws", year:"1976"},
-		{title:"Star Wars",year:"1977"}
+		{title:"Jaws", year:"1976", director:"Steven Spielberg"},
+		{title:"Star Wars",year:"1977", director:"George Lucas"}
 	];
 
 const MovieSlice = (state = initialState, action)=>{
