@@ -1,16 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux';
+import { Provider, useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-
 import "./index.css"
-
 import App from './App'
 import store from './store'
 
-//import { fetchTodos } from './features/todos/TodosSlice'
+//fetch initial data from b.e.
 
-//store.dispatch(fetchTodos)
+//set initial data in store
+	store.dispatch( {type:"addMovies", payload:[
+		{title:"Jaws", year:"1976", director:"Steven Spielberg", review:"great"},
+		{title:"Star Wars",year:"1977", director:"George Lucas", review:"good"}
+		]} )
 
 ReactDOM.render(
   // Render a `<Provider>` around the entire `<App>`,

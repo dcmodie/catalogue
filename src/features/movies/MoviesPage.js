@@ -86,3 +86,10 @@ const Movies = (props)=>{
 		</div>)
 }
 export default Movies
+
+
+		// dispatch( {type:"addMovies", payload:[
+		// 	{title:"Marathon Man", year:"1988", director:"Hal Needham", review:"good"}, 
+		// 	{title:"Marathon Guy", year:"1987", director:"Bob Needham", review:"okay"}
+		// 	]} )
+

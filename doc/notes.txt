@@ -6,3 +6,8 @@ add hook useState
 
 hooks call first render
 hooks call every render 
+
+
+
+fetch from db and save to db via thunk
+https://redux.js.org/tutorials/essentials/part-5-async-logic
